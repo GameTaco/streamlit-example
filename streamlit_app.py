@@ -12,7 +12,7 @@ load_dotenv()
 OPENAI_API_KEY=os.getenv("OPENAI_API_KEY")
 GOOGLE_API_KEY=os.getenv("GOOGLE_API_KEY")
 GOOGLE_CSE_ID=os.getenv("GOOGLE_CSE_ID")
-ELEVENLABS_API_KEY = os.getenv("GOOGLE_CSE_ID")
+ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY")
 set_api_key("ELEVENLABS_API_KEY")
 
 st.download_button('Download file', data)
