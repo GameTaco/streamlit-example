@@ -4,11 +4,15 @@ import langchain as lc
 import os
 import openai
 from dotenv import load_dotenv
+import elevenlabs
+
 
 load_dotenv()  
 OPENAI_API_KEY=os.getenv("OPENAI_API_KEY")
 GOOGLE_API_KEY=os.getenv("GOOGLE_API_KEY")
 GOOGLE_CSE_ID=os.getenv("GOOGLE_CSE_ID")
+ELEVENLABS_API_KEY = os.getenv("GOOGLE_CSE_ID")
+
 
 st.download_button('Download file', data)
 st.text_input('First name')
@@ -17,9 +21,20 @@ st.text_area('Text to translate')
 
 elements = st.container()
 with elements:
-    st.write('This is inside the container')
-    st.button('Submit Message')
+   st.write('Inpute text here')
+   st.text_input('First name')
+   if st.button('Submit Message'):
+      
+   
 
+# Create an Eleven Labs client
+client = elevenlabs.Client(api_key)
+
+# Get the audio for the text "Hello, world!"
+audio = client.synthesize("Hello, world!")
+
+# Play the audio on the Streamlit website
+st.audio(audio)
 
 col1, col2, col3 = st.columns(3)
 
