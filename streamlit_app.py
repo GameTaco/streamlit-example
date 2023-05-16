@@ -5,6 +5,7 @@ import os
 import openai
 from dotenv import load_dotenv
 import elevenlabs
+from elevenlabs import set_api_key
 
 
 load_dotenv()  
@@ -12,7 +13,7 @@ OPENAI_API_KEY=os.getenv("OPENAI_API_KEY")
 GOOGLE_API_KEY=os.getenv("GOOGLE_API_KEY")
 GOOGLE_CSE_ID=os.getenv("GOOGLE_CSE_ID")
 ELEVENLABS_API_KEY = os.getenv("GOOGLE_CSE_ID")
-
+set_api_key("ELEVENLABS_API_KEY")
 
 st.download_button('Download file', data)
 st.text_input('First name')
