@@ -6,8 +6,8 @@ import openai
 from dotenv import load_dotenv
 import elevenlabs
 from elevenlabs import set_api_key
-
-
+from streamlit_chat import message
+#https://github.com/AI-Yash/st-chat/blob/main/examples/chatbot.py#L49
 load_dotenv()  
 OPENAI_API_KEY=os.getenv("OPENAI_API_KEY")
 GOOGLE_API_KEY=os.getenv("GOOGLE_API_KEY")
